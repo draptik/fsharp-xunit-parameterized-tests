@@ -111,8 +111,8 @@ let ``xunit memberData with different types and return signature list`` person n
 type Somebody = { Name : string }
 let samplesTLDR : obj[] list =
     [
-        [| { Somebody.Name = "Homer" }; "Homer" |]
-        [| { Somebody.Name = "Marge" }; "Marge" |]
+        [| { Name = "Homer" }; "Homer" |]
+        [| { Name = "Marge" }; "Marge" |]
     ]
     
 [<Theory>]
