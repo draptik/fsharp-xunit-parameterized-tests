@@ -107,4 +107,16 @@ let samplePeopleWithResult : obj[] list =
 [<MemberData(nameof(samplePeopleWithResult))>]
 let ``xunit memberData with different types and return signature list`` person name =
     Assert.Equal(name, person.Name)
+
+type Somebody = { Name : string }
+let samplesTLDR : obj[] list =
+    [
+        [| { Somebody.Name = "Homer" }; "Homer" |]
+        [| { Somebody.Name = "Marge" }; "Marge" |]
+    ]
+    
+[<Theory>]
+[<MemberData(nameof(samplesTLDR))>]
+let ``test TLDR`` someBody expected =
+    Assert.Equal(expected, someBody.Name)
     
